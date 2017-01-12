@@ -301,7 +301,6 @@ public class TimeSelectorDialog extends Dialog {
         wv_year.TEXT_SIZE = textSize;
         wv_hour.TEXT_SIZE = textSize;
         wv_minute.TEXT_SIZE = textSize;
-        btn2 = (Button)findViewById(R.id.btn_time_select_empty);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -311,7 +310,6 @@ public class TimeSelectorDialog extends Dialog {
                 dateListener.onReturnDate("");
             }
         });
-        btn3 = (Button)findViewById(R.id.btn_time_select_cancel);
         btn3.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -319,7 +317,6 @@ public class TimeSelectorDialog extends Dialog {
                 dismiss();
             }
         });
-        btn1 = (Button)findViewById(R.id.btn_time_select_submit);
         btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
