@@ -69,6 +69,9 @@ public class TimeSelectorDialog extends Dialog {
         this.context=context;
         setContentView(R.layout.time_select_layout);
         textview_title= (TextView) findViewById(R.id.textview_time_title);
+        btn1 = (Button)findViewById(R.id.btn_time_select_submit);
+        btn2 = (Button)findViewById(R.id.btn_time_select_empty);
+        btn3 = (Button)findViewById(R.id.btn_time_select_cancel);
     }
     public TimeSelectorDialog(Context context, int theme) {
         super(context,theme);
