@@ -41,6 +41,8 @@
         dialog.setCurrentDate("2017-01-11　14:50");
         //隐藏清除按钮
         dialog.setEmptyIsShow(false);
+         //设置起始时间
+        dialog.setStartYear(1888);
         dialog.setDateListener(new DateListener() {
             @Override
             public void onReturnDate(String time,int year, int month, int day, int hour, int minute, int isShowType) {
