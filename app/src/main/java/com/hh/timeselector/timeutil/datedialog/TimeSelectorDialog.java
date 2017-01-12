@@ -1,17 +1,12 @@
 package com.hh.timeselector.timeutil.datedialog;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.hh.timeselector.R;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -69,9 +64,9 @@ public class TimeSelectorDialog extends Dialog {
         this.context=context;
         setContentView(R.layout.time_select_layout);
         textview_title= (TextView) findViewById(R.id.textview_time_title);
-        btn1 = (Button)findViewById(R.id.btn_time_select_submit);
         btn2 = (Button)findViewById(R.id.btn_time_select_empty);
         btn3 = (Button)findViewById(R.id.btn_time_select_cancel);
+        btn1 = (Button)findViewById(R.id.btn_time_select_submit);
     }
     public TimeSelectorDialog(Context context, int theme) {
         super(context,theme);
@@ -156,8 +151,6 @@ public class TimeSelectorDialog extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.time_select_layout);
-        textview_title= (TextView) findViewById(R.id.textview_time_title);
         // 添加大小月月份并将其转换为list,方便之后的判断
         String[] months_big = {"1", "3", "5", "7", "8", "10", "12"};
         String[] months_little = {"4", "6", "9", "11"};
@@ -396,5 +389,12 @@ public class TimeSelectorDialog extends Dialog {
         else {
             btn1.setVisibility(View.GONE);
         }
+    }
+    /**
+     * 设置初始年份
+     * @param
+     */
+    public void setStartYear(int year){
+        START_YEAR=year;
     }
 }
