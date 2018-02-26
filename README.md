@@ -8,6 +8,7 @@
    * YEAR_MONTH_DAY_HOUR--年、月、日、时
    * YEAR_MONTH_DAY--年、月、日
    * HOUR_MINUTE--时、分
+   * YEAR_MONTH--年、月
 
 ##how to use
 
@@ -19,12 +20,12 @@
             maven { url 'https://jitpack.io' }
         }
         }
- ```
+    ```
  
  
  
  * Add the dependency
-  ``` Java
+    ``` Java
     dependencies {
             compile 'com.github.yellowhai:TimeSelector:1.4'
     }
