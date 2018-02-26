@@ -26,11 +26,11 @@
  
  
  * Add the dependency
-    ``` Java
+  ``` Java
     dependencies {
             compile 'com.github.yellowhai:TimeSelector:1.5'
     }
-    ```
+  ```
     
  * java
   ``` Java
