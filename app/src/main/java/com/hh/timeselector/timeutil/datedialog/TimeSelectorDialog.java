@@ -345,6 +345,12 @@ public class TimeSelectorDialog extends Dialog {
                 wv_month.setVisibility(View.GONE);
                 wv_day.setVisibility(View.GONE);
                 break;
+            case TimeConfig.YEAR_MONTH:
+                selectTime = PowerDateUtils.getDateStr(hour, minute);
+                wv_day.setVisibility(View.GONE);
+                wv_minute.setVisibility(View.GONE);
+                wv_hour.setVisibility(View.GONE);
+                break;
         }
     }
     public void setDateListener(DateListener dateListener){
