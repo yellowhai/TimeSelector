@@ -144,6 +144,9 @@ public class TimeSelectorDialog extends Dialog {
             case TimeConfig.HOUR_MINUTE:
                 selectTime = PowerDateUtils.getDateStr(hour, minute);
                 break;
+            case TimeConfig.YEAR_MONTH:
+                selectTime = PowerDateUtils.getDateStr(year, month);
+                break;
         }
         return selectTime;
     }

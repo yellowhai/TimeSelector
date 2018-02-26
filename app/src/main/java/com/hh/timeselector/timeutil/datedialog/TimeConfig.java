@@ -27,4 +27,8 @@ public class TimeConfig {
      * 时分
      */
     public static final int HOUR_MINUTE=3;
+    /**
+     * 年月
+     */
+    public static final int YEAR_MONTH=4;
 }
