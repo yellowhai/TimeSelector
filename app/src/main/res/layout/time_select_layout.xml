@@ -61,6 +61,7 @@
             android:background="@null"
             android:text="确定"
             android:textColor="@color/blue_text"
+            android:gravity="center"
             android:textSize="15dp" />
         <View
             android:layout_width="0.5dp"
@@ -74,6 +75,7 @@
             android:background="@null"
             android:text="清空"
             android:textColor="@color/blue_text"
+            android:gravity="center"
             android:textSize="15dp" />
         <View
             android:layout_width="0.5dp"
@@ -87,6 +89,7 @@
             android:background="@null"
             android:text="取消"
             android:textColor="@color/blue_text"
+            android:gravity="center"
             android:textSize="15dp" />
 
     </LinearLayout>
