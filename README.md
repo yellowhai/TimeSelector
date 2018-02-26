@@ -1,3 +1,4 @@
+
 # TimeSelector
 # 日期选择控件<br>
 ![](https://github.com/yellowhai/TimeSelector/blob/master/timeVideo.gif)  
@@ -27,7 +28,7 @@
  * Add the dependency
     ``` Java
     dependencies {
-            compile 'com.github.yellowhai:TimeSelector:1.4'
+            compile 'com.github.yellowhai:TimeSelector:1.5'
     }
     ```
     
