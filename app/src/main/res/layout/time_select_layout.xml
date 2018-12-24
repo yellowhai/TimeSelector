@@ -56,7 +56,7 @@
         <Button
             android:id="@+id/btn_time_select_submit"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@null"
             android:text="确定"
@@ -70,7 +70,7 @@
         <Button
             android:id="@+id/btn_time_select_empty"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@null"
             android:text="清空"
@@ -84,7 +84,7 @@
         <Button
             android:id="@+id/btn_time_select_cancel"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@null"
             android:text="取消"
