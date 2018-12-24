@@ -60,7 +60,7 @@ public class TimeSelectorDialog extends Dialog {
     static int minute;
     private static String selectTime;
     public TimeSelectorDialog(Context context) {
-        super(context, R.style.dialog_normal);
+        super(context);
         this.context=context;
         setContentView(R.layout.time_select_layout);
         textview_title= (TextView) findViewById(R.id.textview_time_title);
