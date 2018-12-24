@@ -21,7 +21,7 @@
         <item name="android:windowIsTranslucent">false</item>
         <!-- 设置dialog是否没有标题 -->
         <item name="android:windowNoTitle">true</item>
-        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 </resources>
