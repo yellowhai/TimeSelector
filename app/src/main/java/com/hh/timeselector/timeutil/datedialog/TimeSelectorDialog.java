@@ -60,12 +60,13 @@ public class TimeSelectorDialog extends Dialog {
     static int day;
     static int hour;
     static int minute;
-    int textSize = PowerDateUtils.dip2px(context, 14);;//textSize = context.getResources().getDimensionPixelSize(R.dimen.font_size_4);
+    int textSize ;//textSize = context.getResources().getDimensionPixelSize(R.dimen.font_size_4);
     private static String selectTime;
 
     public TimeSelectorDialog(Context context) {
         super(context, R.style.dialog_normal);
         this.context = context;
+        textSize = PowerDateUtils.dip2px(context, 14);
         setContentView(R.layout.time_select_layout);
         textview_title = (TextView) findViewById(R.id.textview_time_title);
         btn2 = (Button) findViewById(R.id.btn_time_select_empty);
