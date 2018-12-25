@@ -3,6 +3,21 @@
 # 日期选择控件<br>
 ![](https://github.com/yellowhai/TimeSelector/blob/master/timeVideo.gif)  
 
+##2018.12.25更新
+  
+  * 可修改dialog部分样式，如日期的字体大小,初始是14，最大设置不能超过40，超过则默认设置20（为控件体验）
+       ``` Java
+        dialog.setTextSize(14);//修改字体大小
+       ```  
+  * 可设置dialog边框颜色等，在项目colors类里定义对应名称，填写色值即可
+       ``` Java
+            <color name="title_color_h">#ffffff</color>
+            <color name="style_color_h">#3185fc</color>
+            <color name="line_color_h">#cdcdcd</color>
+            <color name="item_text_color_h">#b5b5b5</color>
+            <color name="value_text_color_h">#000000</color>
+       ```  
+
 ##TimeConfig
 
    * YEAR_MONTH_DAY_HOUR_MINUTE--年、月、日、时、分
@@ -14,14 +29,14 @@
 ##how to use
 
  * Add it in your root build.gradle at the end of repositories
-    ``` Java
+   ``` Java
       allprojects {
            repositories {
             ...
             maven { url 'https://jitpack.io' }
         }
         }
-    ```
+   ```
  
  
  
