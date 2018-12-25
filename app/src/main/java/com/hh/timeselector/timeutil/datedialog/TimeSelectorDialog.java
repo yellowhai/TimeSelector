@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
 import com.hh.timeselector.R;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -34,7 +36,7 @@ public class TimeSelectorDialog extends Dialog {
     /**
      * 3个按钮
      */
-    private Button btn1,btn2,btn3;
+    private Button btn1, btn2, btn3;
 
     /**
      * 时间显示样式
@@ -60,21 +62,24 @@ public class TimeSelectorDialog extends Dialog {
     static int minute;
     int textSize = 14;//textSize = context.getResources().getDimensionPixelSize(R.dimen.font_size_4);
     private static String selectTime;
+
     public TimeSelectorDialog(Context context) {
         super(context, R.style.dialog_normal);
-        this.context=context;
+        this.context = context;
         setContentView(R.layout.time_select_layout);
-        textview_title= (TextView) findViewById(R.id.textview_time_title);
-        btn2 = (Button)findViewById(R.id.btn_time_select_empty);
-        btn3 = (Button)findViewById(R.id.btn_time_select_cancel);
-        btn1 = (Button)findViewById(R.id.btn_time_select_submit);
+        textview_title = (TextView) findViewById(R.id.textview_time_title);
+        btn2 = (Button) findViewById(R.id.btn_time_select_empty);
+        btn3 = (Button) findViewById(R.id.btn_time_select_cancel);
+        btn1 = (Button) findViewById(R.id.btn_time_select_submit);
     }
+
     public TimeSelectorDialog(Context context, int theme) {
-        super(context,theme);
+        super(context, theme);
     }
 
     /**
      * 初始化时间   yyyy-MM-dd kk:mm
+     *
      * @param dateString
      */
     public void setCurrentDate(String dateString) {
@@ -127,6 +132,7 @@ public class TimeSelectorDialog extends Dialog {
 
     /**
      * 时间返回格式
+     *
      * @param isShowtype
      * @return
      */
@@ -160,12 +166,12 @@ public class TimeSelectorDialog extends Dialog {
         String[] months_little = {"4", "6", "9", "11"};
         final List<String> list_big = Arrays.asList(months_big);
         final List<String> list_little = Arrays.asList(months_little);
-        time_select_date = (TextView)findViewById(R.id.time_select_date);
+        time_select_date = (TextView) findViewById(R.id.time_select_date);
         selectTime = showTime(isShowtype);
         time_select_date.setText(selectTime);
 
         // 年
-        final WheelView wv_year = (WheelView)findViewById(R.id.year);
+        final WheelView wv_year = (WheelView) findViewById(R.id.year);
         wv_year.setAdapter(new NumericWheelAdapter(START_YEAR, END_YEAR));// 设置"年"的显示数据
         wv_year.setCyclic(true);// 可循环滚动
         wv_year.setLabel("年");// 添加文字
@@ -173,13 +179,13 @@ public class TimeSelectorDialog extends Dialog {
         // wv_year.setCurrentItem(year);// 初始化时显示的数据
 
         // 月
-        final WheelView wv_month = (WheelView)findViewById(R.id.month);
+        final WheelView wv_month = (WheelView) findViewById(R.id.month);
         wv_month.setAdapter(new NumericWheelAdapter(1, 12));
         wv_month.setCyclic(true);
         wv_month.setLabel("月");
         wv_month.setCurrentItem(month);
         // 时
-        final WheelView wv_hour = (WheelView)findViewById(R.id.hour);
+        final WheelView wv_hour = (WheelView) findViewById(R.id.hour);
         wv_hour.setAdapter(new NumericWheelAdapter(0, 23));
         wv_hour.setCyclic(true);
         wv_hour.setLabel("时");
@@ -187,7 +193,7 @@ public class TimeSelectorDialog extends Dialog {
 
         // 分
 
-        final WheelView wv_minute = (WheelView)findViewById(R.id.minute);
+        final WheelView wv_minute = (WheelView) findViewById(R.id.minute);
         wv_minute.setVisibility(View.VISIBLE);
         wv_minute.setAdapter(new NumericWheelAdapter(0, 60));//new NumericWheelAdapter(0, 50, "minute", 10)
         wv_minute.setCyclic(true);
@@ -205,7 +211,7 @@ public class TimeSelectorDialog extends Dialog {
         };
         wv_minute.addChangingListener(wheelListener_minute);
         // 日
-        final WheelView wv_day = (WheelView)findViewById(R.id.day);
+        final WheelView wv_day = (WheelView) findViewById(R.id.day);
         wv_day.setCyclic(true);
         // 判断大小月及是否闰年,用来确定"日"的数据
         if (list_big.contains(String.valueOf(month + 1))) {
@@ -298,7 +304,7 @@ public class TimeSelectorDialog extends Dialog {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isShowing()){
+                if (isShowing()) {
                     dismiss();
                 }
                 dateListener.onReturnDate("");
@@ -317,7 +323,7 @@ public class TimeSelectorDialog extends Dialog {
             public void onClick(View v) {
                 if (isShowing()) {
                     selectTime = showTime(isShowtype);
-                    dateListener.onReturnDate(selectTime,year, month, day, hour,
+                    dateListener.onReturnDate(selectTime, year, month, day, hour,
                             minute, isShowtype);
                     dismiss();
                 }
@@ -329,7 +335,7 @@ public class TimeSelectorDialog extends Dialog {
                         minute);
                 break;
             case TimeConfig.YEAR_MONTH_DAY_HOUR:
-                selectTime = PowerDateUtils.getDateStr(year, month, day,hour);
+                selectTime = PowerDateUtils.getDateStr(year, month, day, hour);
                 wv_minute.setVisibility(View.GONE);
                 break;
             case TimeConfig.YEAR_MONTH_DAY:
@@ -351,31 +357,38 @@ public class TimeSelectorDialog extends Dialog {
                 break;
         }
     }
-    public void setDateListener(DateListener dateListener){
-        this.dateListener=dateListener;
+
+    public void setDateListener(DateListener dateListener) {
+        this.dateListener = dateListener;
     }
-    public void setTimeTitle(String title){
+
+    public void setTimeTitle(String title) {
         textview_title.setText(title);
     }
-    public void setIsShowtype(int isShowtype){
-        this.isShowtype=isShowtype;
+
+    public void setIsShowtype(int isShowtype) {
+        this.isShowtype = isShowtype;
     }
+
     /**
      * 取消按钮是否显示
+     *
      * @param isShow
      */
-    public void setCancleIsShow(boolean isShow){
-        if(isShow)
+    public void setCancleIsShow(boolean isShow) {
+        if (isShow)
             btn3.setVisibility(View.VISIBLE);
         else
             btn3.setVisibility(View.GONE);
     }
+
     /**
      * 清除按钮是否显示
+     *
      * @param isShow
      */
-    public void setEmptyIsShow(boolean isShow){
-        if(isShow)
+    public void setEmptyIsShow(boolean isShow) {
+        if (isShow)
             btn2.setVisibility(View.VISIBLE);
         else
             btn2.setVisibility(View.GONE);
@@ -383,55 +396,58 @@ public class TimeSelectorDialog extends Dialog {
 
     /**
      * 确定按钮是否显示
+     *
      * @param isShow
      */
-    public void setSubmitIsShow(boolean isShow){
-        if(isShow)
+    public void setSubmitIsShow(boolean isShow) {
+        if (isShow)
             btn1.setVisibility(View.VISIBLE);
         else
             btn1.setVisibility(View.GONE);
     }
+
     /**
      * 设置初始年份
+     *
      * @param
      */
-    public void setStartYear(int year){
-        START_YEAR=year;
+    public void setStartYear(int year) {
+        START_YEAR = year;
     }
+
     /**
      * 设置日期字体大小
+     *
      * @param textSize
      */
-    public void setTextSize(int textSize){
-        this.textSize = textSize;
+    public void setTextSize(int textSize) {
+        this.textSize = PowerDateUtils.dip2px(context, textSize);
     }
 
     /**
      * 确定按钮字体颜色
+     *
      * @param textColor
      */
-    public void setSubmitTextColor(int textColor){
+    public void setSubmitTextColor(int textColor) {
         btn1.setTextColor(textColor);
     }
 
     /**
      * 清除按钮字体颜色
+     *
      * @param textColor
      */
-    public void setEmptyTextColor(int textColor){
+    public void setEmptyTextColor(int textColor) {
         btn2.setTextColor(textColor);
     }
 
     /**
      * 取消按钮字体颜色
+     *
      * @param textColor
      */
-    public void setCancleTextColor(int textColor){
-        if(textColor>40){
-            btn3.setTextColor(20);
-        }
-        else {
-            btn3.setTextColor(textColor);
-        }
+    public void setCancleTextColor(int textColor) {
+        btn3.setTextColor(textColor);
     }
 }

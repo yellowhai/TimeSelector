@@ -1,5 +1,6 @@
 package com.hh.timeselector.timeutil.datedialog;
 
+import android.content.Context;
 import android.text.format.DateFormat;
 import android.util.Log;
 
@@ -41,6 +42,12 @@ public class PowerDateUtils {
 
 		return Date2String(time);
 	}
+
+	public static int dip2px(Context context, float dpValue) {
+		final float scale = context.getResources().getDisplayMetrics().density;
+		return (int) (dpValue * scale + 0.5f);
+	}
+
 
 	public static String getDateStr1(int year, int month, int day, int hour,
 			int minute) {
