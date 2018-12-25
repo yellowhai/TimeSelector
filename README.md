@@ -43,7 +43,7 @@
  * Add the dependency
   ``` Java
     dependencies {
-            compile 'com.github.yellowhai:TimeSelector:1.8.3'
+            compile 'com.github.yellowhai:TimeSelector:1.8.5'
     }
   ```
     
