@@ -60,7 +60,7 @@ public class TimeSelectorDialog extends Dialog {
     static int day;
     static int hour;
     static int minute;
-    int textSize = 14;//textSize = context.getResources().getDimensionPixelSize(R.dimen.font_size_4);
+    int textSize = PowerDateUtils.dip2px(context, 14);;//textSize = context.getResources().getDimensionPixelSize(R.dimen.font_size_4);
     private static String selectTime;
 
     public TimeSelectorDialog(Context context) {
@@ -108,20 +108,20 @@ public class TimeSelectorDialog extends Dialog {
         Matcher m3 = sf.matcher(dateString);
         if (m0.find()) {
             year = Integer.parseInt(m0.group(1));
-            month = Integer.parseInt(m0.group(2));
+            month = Integer.parseInt(m0.group(2))-1;
             day = Integer.parseInt(m0.group(3));
             hour = Integer.parseInt(m0.group(1));
             minute = Integer.parseInt(m0.group(2));
         }
         if (m1.find()) {
             year = Integer.parseInt(m1.group(1));
-            month = Integer.parseInt(m1.group(2));
+            month = Integer.parseInt(m1.group(2))-1;
             day = Integer.parseInt(m1.group(3));
             hour = Integer.parseInt(m1.group(1));
         }
         if (m2.find()) {
             year = Integer.parseInt(m2.group(1));
-            month = Integer.parseInt(m2.group(2));
+            month = Integer.parseInt(m2.group(2))-1;
             day = Integer.parseInt(m2.group(3));
         }
         if (m3.find()) {
@@ -323,7 +323,7 @@ public class TimeSelectorDialog extends Dialog {
             public void onClick(View v) {
                 if (isShowing()) {
                     selectTime = showTime(isShowtype);
-                    dateListener.onReturnDate(selectTime, year, month, day, hour,
+                    dateListener.onReturnDate(selectTime, year, month+1, day, hour,
                             minute, isShowtype);
                     dismiss();
                 }
