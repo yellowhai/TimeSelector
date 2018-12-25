@@ -427,6 +427,11 @@ public class TimeSelectorDialog extends Dialog {
      * @param textColor
      */
     public void setCancleTextColor(int textColor){
-        btn3.setTextColor(textColor);
+        if(textColor>40){
+            btn3.setTextColor(20);
+        }
+        else {
+            btn3.setTextColor(textColor);
+        }
     }
 }

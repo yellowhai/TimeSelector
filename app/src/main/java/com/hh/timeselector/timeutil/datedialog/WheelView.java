@@ -139,6 +139,8 @@ public class WheelView extends View {
 	// Cyclic
 	boolean isCyclic = false;
 
+	Context mContext;
+
 	// Listeners
 	private List<OnWheelChangedListener> changingListeners = new LinkedList<OnWheelChangedListener>();
 
@@ -177,7 +179,7 @@ public class WheelView extends View {
 	private void initData(Context context) {
 		gestureDetector = new GestureDetector(context, gestureListener);
 		gestureDetector.setIsLongpressEnabled(false);
-
+		mContext = context;
 		scroller = new Scroller(context);
 	}
 
@@ -425,14 +427,14 @@ public class WheelView extends View {
 			itemsPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG
 					| Paint.FAKE_BOLD_TEXT_FLAG);
 			// itemsPaint.density = getResources().getDisplayMetrics().density;
-			itemsPaint.setTextSize(TEXT_SIZE);
+			itemsPaint.setTextSize(mContext.getResources().getDimensionPixelSize(TEXT_SIZE));
 		}
 
 		if (valuePaint == null) {
 			valuePaint = new TextPaint(Paint.ANTI_ALIAS_FLAG
 					| Paint.FAKE_BOLD_TEXT_FLAG | Paint.DITHER_FLAG);
 			// valuePaint.density = getResources().getDisplayMetrics().density;
-			valuePaint.setTextSize(TEXT_SIZE);
+			valuePaint.setTextSize(mContext.getResources().getDimensionPixelSize(TEXT_SIZE));
 			// valuePaint.setShadowLayer(0.1f, 0, 0.1f, 0xFFC0C0C0);
 		}
 
@@ -767,8 +769,9 @@ public class WheelView extends View {
 	 *            the canvas for drawing
 	 */
 	private void drawValue(Canvas canvas) {
-		valuePaint.setColor(VALUE_TEXT_COLOR);
-		labelPaint.setColor(LABLE_TEXT_COLOR);
+
+		valuePaint.setColor(mContext.getResources().getColor(VALUE_TEXT_COLOR));
+		labelPaint.setColor(mContext.getResources().getColor(LABLE_TEXT_COLOR));
 		
 		valuePaint.drawableState = getDrawableState();
 		labelPaint.drawableState = getDrawableState();
@@ -805,7 +808,7 @@ public class WheelView extends View {
 		int top = itemsLayout.getLineTop(1);
 		canvas.translate(0, -top + scrollingOffset);
 
-		itemsPaint.setColor(ITEMS_TEXT_COLOR);
+		itemsPaint.setColor(mContext.getResources().getColor(ITEMS_TEXT_COLOR));
 		itemsPaint.drawableState = getDrawableState();
 		itemsLayout.draw(canvas);
 
