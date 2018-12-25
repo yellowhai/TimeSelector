@@ -55,12 +55,11 @@ public class WheelView extends View {
 	private static final int MIN_DELTA_FOR_SCROLLING = 1;
 
 	// /** Current value & label text color */
-	private static final int VALUE_TEXT_COLOR = 0xFF000000;
-
+	private static final int VALUE_TEXT_COLOR = R.color.value_text_color_h;
 	/** Items text color */
-	private static final int ITEMS_TEXT_COLOR = 0xFFb5b5b5;
+	private static final int ITEMS_TEXT_COLOR = R.color.item_text_color_h;
 	/** 标签字体颜色 */
-	private static final int LABLE_TEXT_COLOR = 0xFF599EFF;
+	private static final int LABLE_TEXT_COLOR = R.color.style_color_h;
 	//
 	// /** Top and bottom shadows colors */
 	// private static final int[] SHADOWS_COLORS = new int[] { 0xFF111111,
@@ -1041,5 +1040,16 @@ public class WheelView extends View {
 
 		startScrolling();
 	}
-
+//
+//	public void setValueTextColor(int textColor){
+//		VALUE_TEXT_COLOR = textColor;
+//	}
+//
+//	public void setlableTextColor(int textColor){
+//		LABLE_TEXT_COLOR = textColor;
+//	}
+//
+//	public void setitemsTextColor(int textColor){
+//		LABLE_TEXT_COLOR = textColor;
+//	}
 }

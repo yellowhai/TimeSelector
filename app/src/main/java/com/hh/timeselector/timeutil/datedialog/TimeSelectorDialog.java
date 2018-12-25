@@ -58,6 +58,7 @@ public class TimeSelectorDialog extends Dialog {
     static int day;
     static int hour;
     static int minute;
+    int textSize = 14;//textSize = context.getResources().getDimensionPixelSize(R.dimen.font_size_4);
     private static String selectTime;
     public TimeSelectorDialog(Context context) {
         super(context, R.style.dialog_normal);
@@ -102,20 +103,20 @@ public class TimeSelectorDialog extends Dialog {
         Matcher m3 = sf.matcher(dateString);
         if (m0.find()) {
             year = Integer.parseInt(m0.group(1));
-            month = Integer.parseInt(m0.group(2)) - 1;
+            month = Integer.parseInt(m0.group(2));
             day = Integer.parseInt(m0.group(3));
             hour = Integer.parseInt(m0.group(1));
             minute = Integer.parseInt(m0.group(2));
         }
         if (m1.find()) {
             year = Integer.parseInt(m1.group(1));
-            month = Integer.parseInt(m1.group(2)) - 1;
+            month = Integer.parseInt(m1.group(2));
             day = Integer.parseInt(m1.group(3));
             hour = Integer.parseInt(m1.group(1));
         }
         if (m2.find()) {
             year = Integer.parseInt(m2.group(1));
-            month = Integer.parseInt(m2.group(2)) - 1;
+            month = Integer.parseInt(m2.group(2));
             day = Integer.parseInt(m2.group(3));
         }
         if (m3.find()) {
@@ -289,9 +290,6 @@ public class TimeSelectorDialog extends Dialog {
         wv_day.addChangingListener(wheelListener_day);
         wv_hour.addChangingListener(wheelListener_hour);
         // 根据屏幕密度来指定选择器字体的大小
-        int textSize = 0;
-        textSize = context.getResources().getDimensionPixelSize(
-                R.dimen.font_size_4);
         wv_day.TEXT_SIZE = textSize;
         wv_month.TEXT_SIZE = textSize;
         wv_year.TEXT_SIZE = textSize;
@@ -367,24 +365,20 @@ public class TimeSelectorDialog extends Dialog {
      * @param isShow
      */
     public void setCancleIsShow(boolean isShow){
-        if(isShow){
+        if(isShow)
             btn3.setVisibility(View.VISIBLE);
-        }
-        else {
+        else
             btn3.setVisibility(View.GONE);
-        }
     }
     /**
      * 清除按钮是否显示
      * @param isShow
      */
     public void setEmptyIsShow(boolean isShow){
-        if(isShow){
+        if(isShow)
             btn2.setVisibility(View.VISIBLE);
-        }
-        else {
+        else
             btn2.setVisibility(View.GONE);
-        }
     }
 
     /**
@@ -392,12 +386,10 @@ public class TimeSelectorDialog extends Dialog {
      * @param isShow
      */
     public void setSubmitIsShow(boolean isShow){
-        if(isShow){
+        if(isShow)
             btn1.setVisibility(View.VISIBLE);
-        }
-        else {
+        else
             btn1.setVisibility(View.GONE);
-        }
     }
     /**
      * 设置初始年份
@@ -405,5 +397,36 @@ public class TimeSelectorDialog extends Dialog {
      */
     public void setStartYear(int year){
         START_YEAR=year;
+    }
+    /**
+     * 设置日期字体大小
+     * @param textSize
+     */
+    public void setTextSize(int textSize){
+        this.textSize = textSize;
+    }
+
+    /**
+     * 确定按钮字体颜色
+     * @param textColor
+     */
+    public void setSubmitTextColor(int textColor){
+        btn1.setTextColor(textColor);
+    }
+
+    /**
+     * 清除按钮字体颜色
+     * @param textColor
+     */
+    public void setEmptyTextColor(int textColor){
+        btn2.setTextColor(textColor);
+    }
+
+    /**
+     * 取消按钮字体颜色
+     * @param textColor
+     */
+    public void setCancleTextColor(int textColor){
+        btn3.setTextColor(textColor);
     }
 }

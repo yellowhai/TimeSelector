@@ -3,8 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#3185fc</color>
-    <color name="color_common_text">#82C6FE</color>
-    <color name="color_common_white">#ffffff</color>
-    <color name="blue_text">#3185fc</color>
-    <color name="line_color">#cdcdcd</color>
+
+
+
+    <color name="title_color_h">#ffffff</color>
+    <color name="style_color_h">#3185fc</color>
+    <color name="line_color_h">#cdcdcd</color>
+    <color name="item_text_color_h">#b5b5b5</color>
+    <color name="value_text_color_h">#000000</color>
 </resources>

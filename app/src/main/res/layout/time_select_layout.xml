@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/color_common_white"
+    android:background="@color/title_color_h"
     android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="40dp"
         android:gravity="center"
-        android:background="@color/blue_text"
+        android:background="@color/style_color_h"
         android:orientation="horizontal" >
 
         <LinearLayout
@@ -24,7 +24,7 @@
                 android:layout_height="40dp"
                 android:gravity="center"
                 android:text="当前时间:"
-                android:textColor="@color/color_common_white"
+                android:textColor="@color/title_color_h"
                 android:textSize="16dp" />
 
             <TextView
@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:gravity="center"
-                android:textColor="@color/color_common_white"
+                android:textColor="@color/title_color_h"
                 android:textSize="16dp" />
         </LinearLayout>
     </LinearLayout>
@@ -47,7 +47,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/line_color" />
+        android:background="@color/line_color_h" />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -60,13 +60,13 @@
             android:layout_weight="1"
             android:background="@null"
             android:text="确定"
-            android:textColor="@color/blue_text"
+            android:textColor="@color/style_color_h"
             android:gravity="center"
             android:textSize="15dp" />
         <View
             android:layout_width="0.5dp"
             android:layout_height="match_parent"
-            android:background="@color/line_color" />
+            android:background="@color/line_color_h" />
         <Button
             android:id="@+id/btn_time_select_empty"
             android:layout_width="0dp"
@@ -74,13 +74,13 @@
             android:layout_weight="1"
             android:background="@null"
             android:text="清空"
-            android:textColor="@color/blue_text"
+            android:textColor="@color/style_color_h"
             android:gravity="center"
             android:textSize="15dp" />
         <View
             android:layout_width="0.5dp"
             android:layout_height="match_parent"
-            android:background="@color/line_color" />
+            android:background="@color/line_color_h" />
         <Button
             android:id="@+id/btn_time_select_cancel"
             android:layout_width="0dp"
@@ -88,7 +88,7 @@
             android:layout_weight="1"
             android:background="@null"
             android:text="取消"
-            android:textColor="@color/blue_text"
+            android:textColor="@color/style_color_h"
             android:gravity="center"
             android:textSize="15dp" />
 

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:paddingTop="10dp"
     android:paddingBottom="10dp"
-    android:background="@color/color_common_white"
+    android:background="@color/title_color_h"
     android:layout_gravity="center_horizontal">
 
     <com.hh.timeselector.timeutil.datedialog.WheelView
