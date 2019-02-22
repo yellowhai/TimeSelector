@@ -111,14 +111,14 @@ public class TimeSelectorDialog extends Dialog {
             year = Integer.parseInt(m0.group(1));
             month = Integer.parseInt(m0.group(2))-1;
             day = Integer.parseInt(m0.group(3));
-            hour = Integer.parseInt(m0.group(1));
-            minute = Integer.parseInt(m0.group(2));
+            hour = Integer.parseInt(m0.group(4));
+            minute = Integer.parseInt(m0.group(5));
         }
         if (m1.find()) {
             year = Integer.parseInt(m1.group(1));
             month = Integer.parseInt(m1.group(2))-1;
             day = Integer.parseInt(m1.group(3));
-            hour = Integer.parseInt(m1.group(1));
+            hour = Integer.parseInt(m1.group(4));
         }
         if (m2.find()) {
             year = Integer.parseInt(m2.group(1));
