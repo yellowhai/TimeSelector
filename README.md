@@ -3,9 +3,10 @@
 # 日期选择控件<br>
 ![](https://github.com/yellowhai/TimeSelector/blob/master/timeVideo.gif)  
 ##2019.2.2更新
-  * //默认时间
-    dialog.setCurrentDate("2019-02-22　08");
-    修改以上默认时间格式显示不正确问题
+  * 修改以下默认时间格式显示不正确问题
+       ``` Java
+         dialog.setCurrentDate("2019-02-22　08");//默认时间
+       ```  
 ##2018.12.25更新
   
   * 可修改dialog部分样式，如日期的字体大小,初始是14，最大设置不能超过40，超过则默认设置20（为控件体验）
