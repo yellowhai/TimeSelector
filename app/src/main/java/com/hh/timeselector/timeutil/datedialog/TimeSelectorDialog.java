@@ -58,6 +58,7 @@ public class TimeSelectorDialog extends Dialog {
     static int year;
     static int month;
     static int day;
+    static int newDay;
     static int hour;
     static int minute;
     int textSize ;//textSize = context.getResources().getDimensionPixelSize(R.dimen.font_size_4);
@@ -89,6 +90,7 @@ public class TimeSelectorDialog extends Dialog {
         day = 0;
         hour = 0;
         minute = 0;
+        newDay = 0;
         //年月日时分
         String pattern0 = "(\\d{4})[-|/](\\d{1,2})[-|/](\\d{1,2})\\s+(\\d{1,2}):(\\d{1,2})";
         //年月日时
@@ -259,15 +261,36 @@ public class TimeSelectorDialog extends Dialog {
                 // 判断大小月及是否闰年,用来确定"日"的数据
                 if (list_big.contains(String.valueOf(month))) {
                     wv_day.setAdapter(new NumericWheelAdapter(1, 31));
+                    if(newDay>0){
+                        day = newDay;
+                        wv_day.setCurrentItem(30);
+                    }
+                    newDay = 0;
                 } else if (list_little.contains(String.valueOf(month))) {
+                    if(day>=31){
+                        newDay = day;
+                        day = 30;
+                        wv_day.setCurrentItem(29);
+                    }
                     wv_day.setAdapter(new NumericWheelAdapter(1, 30));
                 } else {
                     if (((wv_year.getCurrentItem() + START_YEAR) % 4 == 0 && (wv_year
                             .getCurrentItem() + START_YEAR) % 100 != 0)
-                            || (wv_year.getCurrentItem() + START_YEAR) % 400 == 0)
+                            || (wv_year.getCurrentItem() + START_YEAR) % 400 == 0) {
+                        if(day>=30){
+                            newDay = day;
+                            day = 29;
+                            wv_day.setCurrentItem(28);
+                        }
                         wv_day.setAdapter(new NumericWheelAdapter(1, 29));
-                    else
+                    } else {
+                        if(day>=29){
+                            newDay = day;
+                            day = 28;
+                            wv_day.setCurrentItem(27);
+                        }
                         wv_day.setAdapter(new NumericWheelAdapter(1, 28));
+                    }
                 }
                 month = month - 1;
                 selectTime = showTime(isShowtype);
