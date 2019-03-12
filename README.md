@@ -4,6 +4,7 @@
 ![](https://github.com/yellowhai/TimeSelector/blob/master/timeVideo.gif)  
 ##2019.3.6更新
   * 修改不同月份天数不一致，导致的的滑动月份返回时间错乱的问题，该问题只在月份天数不同时会出现且日期为28号以后，再次调月份才会出现。
+
 ##2019.2.2更新
   * 修改以下默认时间格式显示不正确问题
        ``` Java
